@@ -1,0 +1,37 @@
+<resources>
+
+    <string name="app_name">Meu RU</string>
+    <string name="splash_screen">Splash Screen</string>
+    <string name="txtLogin">Login</string>
+    <string name="txtBemVindo">Bem vindo</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="opcao_sair">Sair</string>
+
+    <!-- STRING Toolbar -->
+    <string name="txt_menu">Restaurante Universitário do ICET</string>
+
+
+    <!-- STRING TELA LATERAL -->
+    <string name="menu_home">Início</string>
+    <string name="menu_cardapio">Cardápio</string>
+    <string name="menu_declaracao_ru">Declaração RU</string>
+    <string name="menu_sobre">Sobre</string>
+
+    <!-- STRING TELA LOGIN -->
+    <string name="mostrar_senha">Mostrar Senha</string>
+    <string name="login">Entrar</string>
+    <string name="register">Cadastrar-se</string>
+    <string name="senha">Senha</string>
+    <string name="email">E-mail</string>
+    <string name="txt_boasvindas_login">Login</string>
+
+    <!-- STRING TELA REGISTER -->
+    <string name="btn_salvar">Salvar</string>
+    <string name="cadastro">Cadastrar-se</string>
+    <string name="nome">Nome</string>
+
+</resources>
