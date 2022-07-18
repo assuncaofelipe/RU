@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "215640532482",
+    "project_id": "meuru-icet",
+    "storage_bucket": "meuru-icet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215640532482:android:79455225d0d75027b0691b",
+        "android_client_info": {
+          "package_name": "com.assuncao.ru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215640532482-ueieoh1tlbhdllmihatdegf33d558ggd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy8rA2aUNdhSzOqor9c-kpXh-9Qq6saUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215640532482-ueieoh1tlbhdllmihatdegf33d558ggd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215640532482:android:a9eb8df7e2120b1ab0691b",
+        "android_client_info": {
+          "package_name": "com.icet.restaurante"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215640532482-ueieoh1tlbhdllmihatdegf33d558ggd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy8rA2aUNdhSzOqor9c-kpXh-9Qq6saUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215640532482-ueieoh1tlbhdllmihatdegf33d558ggd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
