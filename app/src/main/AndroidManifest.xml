@@ -13,13 +13,35 @@
         android:supportsRtl="true"
         tools:targetApi="31">
         <activity
+            android:name=".DeclaracaoQRcode"
+            android:exported="false"
+            android:theme="@style/Theme.MeuRU"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".PassFoodActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MeuRU"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MeuRU.NoActionBar"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
             android:name=".LoginActivity"
+            android:exported="false"
             android:theme="@style/LoginTheme"
-            android:exported="false" />
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".SplashScreen"
+            android:exported="true"
             android:theme="@style/SplashScreen"
-            android:exported="true">
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
