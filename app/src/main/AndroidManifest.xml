@@ -19,7 +19,7 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".PassFoodActivity"
+            android:name=".FichasRefeicaoActivity"
             android:exported="false"
             android:theme="@style/Theme.MeuRU"
             android:screenOrientation="portrait"

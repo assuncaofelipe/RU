@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FichasRefeicaoActivity">
+
+    <TextView
+        android:id="@+id/tv_nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Usuário atual:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvResultUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="return user"
+        app:layout_constraintStart_toEndOf="@+id/tv_nome"
+        app:layout_constraintTop_toTopOf="@+id/tv_nome" />
+
+    <TextView
+        android:id="@+id/tv_desjejum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Desjejum:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nome" />
+
+    <TextView
+        android:id="@+id/tv_qtd_desjejum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="&quot;?&quot;"
+        app:layout_constraintStart_toEndOf="@+id/tv_desjejum"
+        app:layout_constraintTop_toTopOf="@+id/tv_desjejum" />
+
+    <TextView
+        android:id="@+id/tv_um"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="fichas restantes"
+        app:layout_constraintStart_toEndOf="@+id/tv_qtd_desjejum"
+        app:layout_constraintTop_toTopOf="@+id/tv_qtd_desjejum" />
+
+    <TextView
+        android:id="@+id/tv_almoco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Almoço:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desjejum" />
+
+    <TextView
+        android:id="@+id/tv_qtd_almoco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="&quot;?&quot;"
+        app:layout_constraintStart_toEndOf="@+id/tv_almoco"
+        app:layout_constraintTop_toTopOf="@+id/tv_almoco" />
+
+    <TextView
+        android:id="@+id/tv_dois"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="fichas restantes"
+        app:layout_constraintStart_toEndOf="@+id/tv_qtd_almoco"
+        app:layout_constraintTop_toTopOf="@+id/tv_qtd_almoco" />
+
+    <TextView
+        android:id="@+id/tv_jantar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Jantar:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_almoco" />
+
+    <TextView
+        android:id="@+id/tv_qtd_jantar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="&quot;?&quot;"
+        app:layout_constraintStart_toEndOf="@+id/tv_jantar"
+        app:layout_constraintTop_toTopOf="@+id/tv_jantar" />
+
+    <TextView
+        android:id="@+id/tv_tres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="fichas restantes"
+        app:layout_constraintStart_toEndOf="@+id/tv_qtd_jantar"
+        app:layout_constraintTop_toTopOf="@+id/tv_qtd_jantar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import java.util.*
 
 class MenuActivity : AppCompatActivity() {
 
@@ -29,6 +28,7 @@ class MenuActivity : AppCompatActivity() {
     private fun logout() {
         mAuth?.signOut()
         startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 
     private fun clickListener() {
@@ -45,7 +45,7 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun openFichasActivity() {
-        val intent = Intent(this, PassFoodActivity::class.java)
+        val intent = Intent(this, FichasRefeicaoActivity::class.java)
         startActivity(intent)
     }
 
