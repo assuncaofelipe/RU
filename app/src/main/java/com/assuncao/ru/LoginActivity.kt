@@ -2,6 +2,7 @@ package com.assuncao.ru
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.text.TextUtils
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -10,6 +11,7 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.assuncao.ru.util.LoadingDialog
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -22,17 +24,18 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         mAuth = FirebaseAuth.getInstance()
-        var edit_email = findViewById<EditText>(R.id.edit_email)
-        var edit_senha = findViewById<EditText>(R.id.edit_senha)
-        var btn_login = findViewById<Button>(R.id.btnLogin)
-        var ckc_mostrar_senha = findViewById<CheckBox>(R.id.ckb_mostrar_senha)
+        val editEmail = findViewById<EditText>(R.id.edit_email)
+        val editSenha = findViewById<EditText>(R.id.edit_senha)
+        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val ckcMostrarSenha = findViewById<CheckBox>(R.id.ckb_mostrar_senha)
 
         //loginProgressBar = findViewById(R.id.progressBar);
-        btn_login.setOnClickListener {
-            val loginEmail = edit_email.text.toString()
-            val loginSenha = edit_senha.text.toString()
-            if (!TextUtils.isEmpty(loginEmail) || !TextUtils.isEmpty(loginSenha)) {
-                //loginProgressBar.setVisibility(View.INVISIBLE);
+        btnLogin.setOnClickListener {
+            val loginEmail = editEmail.text.toString()
+            val loginSenha = editSenha.text.toString()
+
+            if (!TextUtils.isEmpty(loginEmail) && !TextUtils.isEmpty(loginSenha)) {
+                progressoLogin()
                 mAuth!!.signInWithEmailAndPassword(loginEmail, loginSenha)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
@@ -44,13 +47,19 @@ class LoginActivity : AppCompatActivity() {
                             // loginProgressBar.setVisibility(View.INVISIBLE);
                         }
                     }
+            } else if (!TextUtils.isEmpty(loginEmail) && (TextUtils.isEmpty(loginSenha))) {
+                preencheCampos()
+            } else if (TextUtils.isEmpty(loginEmail) && (!TextUtils.isEmpty(loginSenha))) {
+                preencheCampos()
+            } else if (TextUtils.isEmpty(loginEmail) && (TextUtils.isEmpty(loginSenha))) {
+                preencheCampos()
             }
         }
-        ckc_mostrar_senha.setOnCheckedChangeListener { buttonView, isChecked ->
+        ckcMostrarSenha.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-                edit_senha.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                editSenha.transformationMethod = HideReturnsTransformationMethod.getInstance()
             } else {
-                edit_senha.transformationMethod = PasswordTransformationMethod.getInstance()
+                editSenha.transformationMethod = PasswordTransformationMethod.getInstance()
             }
         }
     }
@@ -59,6 +68,20 @@ class LoginActivity : AppCompatActivity() {
         val intent = Intent(this@LoginActivity, MenuActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun progressoLogin() {
+        val loading = LoadingDialog(this)
+        loading.startLoading()
+        Handler().postDelayed(object :Runnable{
+            override fun run() {
+                loading.isDismiss()
+            }
+        },1500)
+    }
+
+    private fun preencheCampos() {
+        Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
     }
 
 
