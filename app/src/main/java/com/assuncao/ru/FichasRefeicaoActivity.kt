@@ -20,13 +20,16 @@ class FichasRefeicaoActivity : AppCompatActivity() {
         binding = ActivityFichasRefeicaoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // set Arrow Back to Menu
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setHomeAsUpIndicator(R.drawable.arrow_back)
+
         user = FirebaseAuth.getInstance()
         if (user.currentUser != null) {
             user.currentUser?.let {
                 binding.tvResultUser.text = it.email
             }
         }
-
         db = FirebaseFirestore.getInstance()
 
         // chama o ouvinte de aluno
