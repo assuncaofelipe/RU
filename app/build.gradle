@@ -45,6 +45,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
 
+    // refresh activity
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
     // FireBase
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.6'
     implementation 'com.google.firebase:firebase-auth:21.0.6'
