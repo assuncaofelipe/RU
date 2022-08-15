@@ -35,4 +35,10 @@
     <string name="cadastro">Cadastrar-se</string>
     <string name="nome">Nome</string>
 
+    <!-- TELA DE FICHAS -->
+    <string name="got_it">ENTENDI</string>
+    <string name="texto_alerta_fichas"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua.
+    </string>
+
 </resources>

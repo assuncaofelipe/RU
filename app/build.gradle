@@ -38,22 +38,19 @@ android {
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
 
-    // views (recycler, card, grid)
+    // Views (Material Design, Grid, Recycler, Cards, etc)
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
 
-    // recycler view com uso de concatAdapter
-    implementation 'androidx.recyclerview:recyclerview:1.3.0-beta02'
+    // FireBase
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.6'
+    implementation 'com.google.firebase:firebase-auth:21.0.6'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.2.1'
 
-    // firebase
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.7'
-    implementation 'com.google.firebase:firebase-auth:21.0.7'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.2.2'
-
-    // testes
+    // Test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

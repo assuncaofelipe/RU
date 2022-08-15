@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/felip/AndroidStudioProjects/RU/app/src/main/res/drawable/custom_button.xml" value="0.1475" />
         <entry key="..\:/Users/felip/AndroidStudioProjects/RU/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1475" />
+        <entry key="..\:/Users/felip/AndroidStudioProjects/RU/app/src/main/res/drawable/ic_tip.xml" value="0.15" />
         <entry key="..\:/Users/felip/AndroidStudioProjects/RU/app/src/main/res/layout/activity_declaracao_qrcode.xml" value="0.22" />
         <entry key="..\:/Users/felip/AndroidStudioProjects/RU/app/src/main/res/layout/activity_fichas_refeicao.xml" value="0.25" />
         <entry key="..\:/Users/felip/AndroidStudioProjects/RU/app/src/main/res/layout/activity_login.xml" value="0.23541666666666666" />
@@ -12,6 +13,7 @@
         <entry key="..\:/Users/felip/AndroidStudioProjects/RU/app/src/main/res/layout/activity_pass_food.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/felip/AndroidStudioProjects/RU/app/src/main/res/layout/activity_splash_screen.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/felip/AndroidStudioProjects/RU/app/src/main/res/layout/item_refeicao_fichas.xml" value="0.33" />
+        <entry key="..\:/Users/felip/AndroidStudioProjects/RU/app/src/main/res/layout/item_tip.xml" value="0.25" />
         <entry key="..\:/Users/felip/AndroidStudioProjects/RU/app/src/main/res/layout/loading_item.xml" value="0.23541666666666666" />
       </map>
     </option>
