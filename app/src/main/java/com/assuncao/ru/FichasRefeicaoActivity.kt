@@ -24,6 +24,9 @@ class FichasRefeicaoActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.arrow_back)
 
+
+
+        // Firebase
         user = FirebaseAuth.getInstance()
         if (user.currentUser != null) {
             user.currentUser?.let {
