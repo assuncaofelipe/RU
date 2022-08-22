@@ -46,7 +46,7 @@ class FichasRefeicaoActivity : AppCompatActivity() {
                     val almoco = dados?.get("almoco")
                     val jantar = dados?.get("jantar")
 
-                    val txt_desjejum = findViewById<TextView>(R.id.qtd_ficha_desjejum)
+                    val txt_desjejum = findViewById<TextView>(R.id.refeicao_desjejum_seg)
                     val txt_almoco = findViewById<TextView>(R.id.qtd_ficha_almoco)
                     val txt_jantar = findViewById<TextView>(R.id.qtd_ficha_jantar)
 

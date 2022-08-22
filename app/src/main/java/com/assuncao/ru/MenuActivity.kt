@@ -61,7 +61,7 @@ class MenuActivity : AppCompatActivity() {
     }
 
     fun openCardapioActivity() {
-        val intent = Intent(this, CardapioActivity::class.java)
+        val intent = Intent(this, DiasCardapioActivity::class.java)
         startActivity(intent)
     }
 
