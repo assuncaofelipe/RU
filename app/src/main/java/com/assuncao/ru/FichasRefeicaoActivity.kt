@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.assuncao.ru.databinding.ActivityFichasRefeicaoBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import io.grpc.okhttp.internal.Util
 
 class FichasRefeicaoActivity : AppCompatActivity() {
 
@@ -15,56 +15,56 @@ class FichasRefeicaoActivity : AppCompatActivity() {
     private lateinit var user: FirebaseAuth
     private lateinit var db: FirebaseFirestore
 
+    // refresh layout
+    private lateinit var swipeRefresh: SwipeRefreshLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityFichasRefeicaoBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_fichas_refeicao)
 
-        user = FirebaseAuth.getInstance()
-        if (user.currentUser != null) {
-            user.currentUser?.let {
-                binding.tvResultUser.text = it.email
-            }
-        }
+        // set Arrow Back to Menu
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setHomeAsUpIndicator(R.drawable.arrow_back)
 
+        // Aciona a instancia do Firebase pelo db
         db = FirebaseFirestore.getInstance()
 
-        // chama o ouvinte de aluno
-        ouve_aluno()
+        // chama a função ouvinte de aluno
+        headerStudent()
 
     }
 
     // chamase-se "ouve_aluno()" pois o metodo addOnCompleteListener
     // é um ouvinte do documento que pertence a colecao
-    private fun ouve_aluno() {
-
+    private fun headerStudent() {
         db.collection("Alunos")
             .document("9H4yPmDaTgNufH5HMIE6WJ74Ip83").get()
             .addOnSuccessListener { documento ->
-
-                if ( documento != null && documento.exists()) {
+                if (documento != null && documento.exists()) {
                     val dados = documento.data
                     val desjejum = dados?.get("desjejum")
                     val almoco = dados?.get("almoco")
                     val jantar = dados?.get("jantar")
 
-                    var txt_desjejum = findViewById<TextView>(R.id.tv_qtd_desjejum)
-                    var txt_almoco = findViewById<TextView>(R.id.tv_qtd_almoco)
-                    var txt_jantar = findViewById<TextView>(R.id.tv_qtd_jantar)
+                    val txt_desjejum = findViewById<TextView>(R.id.qtd_ficha_desjejum)
+                    val txt_almoco = findViewById<TextView>(R.id.qtd_ficha_almoco)
+                    val txt_jantar = findViewById<TextView>(R.id.qtd_ficha_jantar)
 
-                    txt_desjejum.setText("$desjejum")
-                    txt_almoco.setText("$almoco")
-                    txt_jantar.setText("$jantar")
+                    txt_desjejum.text = "$desjejum"
+                    txt_almoco.text = "$almoco"
+                    txt_jantar.text = "$jantar"
 
                 } else {
-                    Toast.makeText(baseContext, "error ao ler documento, ele não existe ou está vazio", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        baseContext,
+                        "error ao ler documento, ele não existe ou está vazio",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
             }.addOnFailureListener { error ->
                 Toast.makeText(baseContext, "Error", Toast.LENGTH_SHORT).show()
             }
-
-
     }
 }
 
