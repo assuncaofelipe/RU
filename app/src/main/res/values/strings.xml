@@ -14,7 +14,9 @@
     <!-- STRING Toolbar -->
     <string name="txt_menu">Restaurante Universitário do ICET</string>
     <string name="txt_tela_fichas">Minhas Fichas</string>
-
+    <string name="txt_tela_declaracao">Declaração</string>
+    <string name="txt_tela_cardapio">Cardápio</string>
+    <string name="txt_tela_sobre">Sobre</string>
 
     <!-- STRING TELA LATERAL -->
     <string name="menu_home">Início</string>

@@ -3,7 +3,7 @@ package com.assuncao.ru
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
@@ -32,16 +32,27 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun clickListener() {
-        var imageFichas = findViewById<ImageView>(R.id.ivFichas)
-        var imageDeclaracao = findViewById<ImageView>(R.id.ivdeclaracao)
+        val btnFichas = findViewById<LinearLayout>(R.id.btnFichas)
+        val btnDeclaracao = findViewById<LinearLayout>(R.id.btnDeclaracao)
+        val btnCardapio = findViewById<LinearLayout>(R.id.btnCardapio)
+        val btnSobre = findViewById<LinearLayout>(R.id.btnSobre)
 
-        imageFichas.setOnClickListener {
+        btnFichas.setOnClickListener {
             openFichasActivity()
         }
 
-        imageDeclaracao.setOnClickListener{
+        btnDeclaracao.setOnClickListener{
             openTelaDeclaracao()
         }
+
+        btnCardapio.setOnClickListener{
+            openCardapioActivity()
+        }
+
+        btnSobre.setOnClickListener{
+            openSobre()
+        }
+
     }
 
     private fun openFichasActivity() {
@@ -50,7 +61,8 @@ class MenuActivity : AppCompatActivity() {
     }
 
     fun openCardapioActivity() {
-
+        val intent = Intent(this, CardapioActivity::class.java)
+        startActivity(intent)
     }
 
     private fun openTelaDeclaracao() {
@@ -58,7 +70,8 @@ class MenuActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun sobre() {
-
+    fun openSobre() {
+        val intent = Intent(this, SobreActivity::class.java)
+        startActivity(intent)
     }
 }
