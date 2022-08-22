@@ -61,7 +61,7 @@ class FichasRefeicaoActivity : AppCompatActivity() {
                 }
 
             }.addOnFailureListener { error ->
-
+                Toast.makeText(baseContext, "Error", Toast.LENGTH_SHORT).show()
             }
 
 
