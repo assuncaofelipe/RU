@@ -17,7 +17,6 @@ import com.google.firebase.auth.FirebaseAuth
 class LoginActivity : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
-    private val mAuthStateListener: FirebaseAuth.AuthStateListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
             val loginSenha = editSenha.text.toString()
 
             if (!TextUtils.isEmpty(loginEmail) && !TextUtils.isEmpty(loginSenha)) {
-                progressoLogin()
+                progressLogin()
                 mAuth!!.signInWithEmailAndPassword(loginEmail, loginSenha)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
@@ -47,11 +46,7 @@ class LoginActivity : AppCompatActivity() {
                             // loginProgressBar.setVisibility(View.INVISIBLE);
                         }
                     }
-            } else if (!TextUtils.isEmpty(loginEmail) && (TextUtils.isEmpty(loginSenha))) {
-                preencheCampos()
-            } else if (TextUtils.isEmpty(loginEmail) && (!TextUtils.isEmpty(loginSenha))) {
-                preencheCampos()
-            } else if (TextUtils.isEmpty(loginEmail) && (TextUtils.isEmpty(loginSenha))) {
+            } else if (TextUtils.isEmpty(loginEmail) || (TextUtils.isEmpty(loginSenha))) {
                 preencheCampos()
             }
         }
@@ -70,19 +65,17 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun progressoLogin() {
+    private fun progressLogin() {
         val loading = LoadingDialog(this)
         loading.startLoading()
-        Handler().postDelayed(object :Runnable{
+        Handler().postDelayed(object : Runnable {
             override fun run() {
                 loading.isDismiss()
             }
-        },1500)
+        }, 1500)
     }
 
     private fun preencheCampos() {
         Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
     }
-
-
 }

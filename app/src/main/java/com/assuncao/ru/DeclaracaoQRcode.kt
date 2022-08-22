@@ -15,6 +15,10 @@ class DeclaracaoQRcode : AppCompatActivity() {
         binding = ActivityDeclaracaoQrcodeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // set Arrow Back to Menu
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setHomeAsUpIndicator(R.drawable.arrow_back)
+
         user = FirebaseAuth.getInstance()
 
         if (user.currentUser != null) {
