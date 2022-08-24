@@ -19,15 +19,15 @@
             android:name="com.assuncao.ru.cardapios.SabadoActivity"
             android:exported="true"
             android:label="@string/txt_tela_cardapio"
-            android:parentActivityName=".DiasCardapioActivity"
+            android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name="com.assuncao.ru.cardapios.FridayActivity"
+            android:name="com.assuncao.ru.cardapios.SextaFeiraActivity"
             android:exported="true"
             android:label="@string/txt_tela_cardapio"
-            android:parentActivityName=".DiasCardapioActivity"
+            android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
             tools:ignore="LockedOrientationActivity" />
@@ -35,36 +35,36 @@
             android:name="com.assuncao.ru.cardapios.QuintaFeiraActivity"
             android:exported="true"
             android:label="@string/txt_tela_cardapio"
-            android:parentActivityName=".DiasCardapioActivity"
+            android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name="com.assuncao.ru.cardapios.QuartaFeiraActivity"
+            android:name=".cardapios.QuartaFeiraActivity"
             android:exported="true"
             android:label="@string/txt_tela_cardapio"
-            android:parentActivityName=".DiasCardapioActivity"
+            android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name="com.assuncao.ru.cardapios.TercaFeiraActivity"
+            android:name=".cardapios.TercaFeiraActivity"
             android:exported="true"
             android:label="@string/txt_tela_cardapio"
-            android:parentActivityName=".DiasCardapioActivity"
+            android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name="com.assuncao.ru.cardapios.SegundaFeiraActivity"
+            android:name=".cardapios.SegundaFeiraActivity"
             android:exported="true"
             android:label="@string/txt_tela_cardapio"
-            android:parentActivityName=".DiasCardapioActivity"
+            android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".DiasCardapioActivity"
+            android:name=".ui.DiasCardapioActivity"
             android:exported="true"
             android:label="@string/txt_tela_dias_semana"
             android:parentActivityName=".MenuActivity"
@@ -72,7 +72,7 @@
             android:theme="@style/Theme.MeuRU"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".SobreActivity"
+            android:name=".ui.SobreActivity"
             android:exported="true"
             android:label="@string/txt_tela_sobre"
             android:parentActivityName=".MenuActivity"
@@ -80,7 +80,7 @@
             android:theme="@style/Theme.MeuRU"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".DeclaracaoQRcode"
+            android:name=".ui.DeclaracaoQRcode"
             android:exported="true"
             android:label="@string/txt_tela_declaracao"
             android:parentActivityName=".MenuActivity"
@@ -88,7 +88,7 @@
             android:theme="@style/Theme.MeuRU"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".FichasRefeicaoActivity"
+            android:name=".ui.FichasRefeicaoActivity"
             android:exported="true"
             android:label="@string/txt_tela_fichas"
             android:parentActivityName=".MenuActivity"
@@ -108,7 +108,7 @@
             android:theme="@style/LoginTheme"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".ui.SplashScreen"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/SplashScreen"

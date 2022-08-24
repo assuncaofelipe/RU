@@ -1,4 +1,4 @@
-package com.assuncao.ru.util
+package com.assuncao.ru.fragment
 
 import android.app.Activity
 import android.app.AlertDialog

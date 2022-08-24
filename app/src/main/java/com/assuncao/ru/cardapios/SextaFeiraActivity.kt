@@ -4,10 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.assuncao.ru.R
 
-class FridayActivity : AppCompatActivity() {
+class SextaFeiraActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_friday)
+        setContentView(R.layout.activity_sexta_feira)
 
         // set Arrow Back to Menu
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

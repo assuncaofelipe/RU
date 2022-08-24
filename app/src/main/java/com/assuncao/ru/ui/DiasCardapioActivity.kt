@@ -1,9 +1,10 @@
-package com.assuncao.ru
+package com.assuncao.ru.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.assuncao.ru.R
 import com.assuncao.ru.cardapios.*
 
 class DiasCardapioActivity : AppCompatActivity() {
@@ -64,7 +65,7 @@ class DiasCardapioActivity : AppCompatActivity() {
     private fun openSextaFeira() {
         val sextaFeira = findViewById<CardView>(R.id.card_sexta_feira)
         sextaFeira.setOnClickListener {
-            val intent = Intent(this, FridayActivity::class.java)
+            val intent = Intent(this, SextaFeiraActivity::class.java)
             startActivity(intent)
         }
     }

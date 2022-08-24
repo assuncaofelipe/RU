@@ -5,6 +5,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.assuncao.ru.ui.DeclaracaoQRcode
+import com.assuncao.ru.ui.DiasCardapioActivity
+import com.assuncao.ru.ui.FichasRefeicaoActivity
+import com.assuncao.ru.ui.SobreActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class MenuActivity : AppCompatActivity() {

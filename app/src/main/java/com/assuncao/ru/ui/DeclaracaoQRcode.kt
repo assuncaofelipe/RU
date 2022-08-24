@@ -1,7 +1,8 @@
-package com.assuncao.ru
+package com.assuncao.ru.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.assuncao.ru.R
 import com.assuncao.ru.databinding.ActivityDeclaracaoQrcodeBinding
 import com.google.firebase.auth.FirebaseAuth
 
