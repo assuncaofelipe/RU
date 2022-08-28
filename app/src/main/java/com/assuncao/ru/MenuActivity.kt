@@ -2,12 +2,15 @@ package com.assuncao.ru
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.assuncao.ru.fragment.LoadingDialog
 import com.assuncao.ru.ui.DeclaracaoQRcode
 import com.assuncao.ru.ui.DiasCardapioActivity
-import com.assuncao.ru.ui.FichasRefeicaoActivity
+import com.assuncao.ru.services.FichasRefeicaoActivity
+import com.assuncao.ru.services.LoginActivity
 import com.assuncao.ru.ui.SobreActivity
 import com.google.firebase.auth.FirebaseAuth
 
@@ -20,7 +23,7 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        clickListener()
+        navigateActivitiesMenu()
 
         // saindo do apk0
         val btnLogout = findViewById<Button>(R.id.btn_sair)
@@ -35,47 +38,30 @@ class MenuActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun clickListener() {
+    private fun navigateActivitiesMenu() {
         val btnFichas = findViewById<LinearLayout>(R.id.btnFichas)
         val btnDeclaracao = findViewById<LinearLayout>(R.id.btnDeclaracao)
         val btnCardapio = findViewById<LinearLayout>(R.id.btnCardapio)
         val btnSobre = findViewById<LinearLayout>(R.id.btnSobre)
 
         btnFichas.setOnClickListener {
-            openFichasActivity()
+            val intent = Intent(this, FichasRefeicaoActivity::class.java)
+            startActivity(intent)
         }
 
-        btnDeclaracao.setOnClickListener{
-            openTelaDeclaracao()
+        btnDeclaracao.setOnClickListener {
+            val intent = Intent(this, DeclaracaoQRcode::class.java)
+            startActivity(intent)
         }
 
-        btnCardapio.setOnClickListener{
-            openCardapioActivity()
+        btnCardapio.setOnClickListener {
+            val intent = Intent(this, DiasCardapioActivity::class.java)
+            startActivity(intent)
         }
 
-        btnSobre.setOnClickListener{
-            openSobre()
+        btnSobre.setOnClickListener {
+            val intent = Intent(this, SobreActivity::class.java)
+            startActivity(intent)
         }
-
-    }
-
-    private fun openFichasActivity() {
-        val intent = Intent(this, FichasRefeicaoActivity::class.java)
-        startActivity(intent)
-    }
-
-    fun openCardapioActivity() {
-        val intent = Intent(this, DiasCardapioActivity::class.java)
-        startActivity(intent)
-    }
-
-    private fun openTelaDeclaracao() {
-        val intent = Intent(this, DeclaracaoQRcode::class.java)
-        startActivity(intent)
-    }
-
-    fun openSobre() {
-        val intent = Intent(this, SobreActivity::class.java)
-        startActivity(intent)
     }
 }

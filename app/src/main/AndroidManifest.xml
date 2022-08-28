@@ -5,6 +5,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +20,7 @@
         <activity
             android:name="com.assuncao.ru.cardapios.SabadoActivity"
             android:exported="true"
-            android:label="@string/txt_tela_cardapio"
+            android:label="@string/toolbar_sabado"
             android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
@@ -26,7 +28,7 @@
         <activity
             android:name="com.assuncao.ru.cardapios.SextaFeiraActivity"
             android:exported="true"
-            android:label="@string/txt_tela_cardapio"
+            android:label="@string/toolbar_sexta"
             android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
@@ -34,7 +36,7 @@
         <activity
             android:name="com.assuncao.ru.cardapios.QuintaFeiraActivity"
             android:exported="true"
-            android:label="@string/txt_tela_cardapio"
+            android:label="@string/toolbar_quinta"
             android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
@@ -42,7 +44,7 @@
         <activity
             android:name=".cardapios.QuartaFeiraActivity"
             android:exported="true"
-            android:label="@string/txt_tela_cardapio"
+            android:label="@string/toolbar_quarta"
             android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
@@ -50,7 +52,7 @@
         <activity
             android:name=".cardapios.TercaFeiraActivity"
             android:exported="true"
-            android:label="@string/txt_tela_cardapio"
+            android:label="@string/toolbar_terca"
             android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
@@ -58,7 +60,7 @@
         <activity
             android:name=".cardapios.SegundaFeiraActivity"
             android:exported="true"
-            android:label="@string/txt_tela_cardapio"
+            android:label="@string/toolbar_segunda"
             android:parentActivityName=".ui.DiasCardapioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeuRU"
@@ -88,7 +90,7 @@
             android:theme="@style/Theme.MeuRU"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".ui.FichasRefeicaoActivity"
+            android:name=".services.FichasRefeicaoActivity"
             android:exported="true"
             android:label="@string/txt_tela_fichas"
             android:parentActivityName=".MenuActivity"
@@ -102,7 +104,7 @@
             android:theme="@style/Theme.MeuRU.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".services.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/LoginTheme"

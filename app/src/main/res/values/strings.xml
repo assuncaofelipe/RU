@@ -16,14 +16,16 @@
     <string name="txt_tela_fichas">Minhas Fichas</string>
     <string name="txt_tela_declaracao">Declaração</string>
     <string name="txt_tela_cardapio">Cardápio</string>
-    <string name="txt_tela_dias_semana">Cardápio Semanal</string>
+    <string name="txt_tela_dias_semana">Cardápio da semana</string>
     <string name="txt_tela_sobre">Sobre</string>
 
-    <!-- STRING TELA LATERAL -->
-    <string name="menu_home">Início</string>
-    <string name="menu_cardapio">Cardápio</string>
-    <string name="menu_declaracao_ru">Declaração RU</string>
-    <string name="menu_sobre">Sobre</string>
+    <!-- STRING Toolbar -->
+    <string name="toolbar_segunda">Segunda-Feira</string>
+    <string name="toolbar_terca">Terça-Feira</string>
+    <string name="toolbar_quarta">Quarta-Feira</string>
+    <string name="toolbar_quinta">Quinta-Feira</string>
+    <string name="toolbar_sexta">Sexta-Feira</string>
+    <string name="toolbar_sabado">Sábado</string>
 
     <!-- STRING TELA LOGIN -->
     <string name="mostrar_senha">Mostrar Senha</string>

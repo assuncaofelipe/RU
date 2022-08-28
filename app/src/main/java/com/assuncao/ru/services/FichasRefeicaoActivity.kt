@@ -1,19 +1,19 @@
-package com.assuncao.ru.ui
+package com.assuncao.ru.services
 
 import android.os.Bundle
+import android.os.Handler
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.assuncao.ru.R
 import com.assuncao.ru.databinding.ActivityFichasRefeicaoBinding
+import com.assuncao.ru.fragment.LoadingDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class FichasRefeicaoActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityFichasRefeicaoBinding
-    private lateinit var user: FirebaseAuth
     private lateinit var db: FirebaseFirestore
 
     // refresh layout
@@ -38,22 +38,23 @@ class FichasRefeicaoActivity : AppCompatActivity() {
     // chamase-se "ouve_aluno()" pois o metodo addOnCompleteListener
     // é um ouvinte do documento que pertence a colecao
     private fun headerStudent() {
+        progressLogin()
         db.collection("Alunos")
             .document("9H4yPmDaTgNufH5HMIE6WJ74Ip83").get()
             .addOnSuccessListener { documento ->
                 if (documento != null && documento.exists()) {
-                    val dados = documento.data
-                    val desjejum = dados?.get("desjejum")
-                    val almoco = dados?.get("almoco")
-                    val jantar = dados?.get("jantar")
+                    val data = documento.data
+                    val desjejum = data?.get("desjejum")
+                    val almoco = data?.get("almoco")
+                    val jantar = data?.get("jantar")
 
-                    val txt_desjejum = findViewById<TextView>(R.id.refeicao_desjejum_seg)
-                    val txt_almoco = findViewById<TextView>(R.id.qtd_ficha_almoco)
-                    val txt_jantar = findViewById<TextView>(R.id.qtd_ficha_jantar)
+                    val txtDesjejum = findViewById<TextView>(R.id.refeicao_desjejum_seg)
+                    val txtAlmoco = findViewById<TextView>(R.id.qtd_ficha_almoco)
+                    val txtJantar = findViewById<TextView>(R.id.qtd_ficha_jantar)
 
-                    txt_desjejum.text = "$desjejum"
-                    txt_almoco.text = "$almoco"
-                    txt_jantar.text = "$jantar"
+                    txtDesjejum.text = "$desjejum"
+                    txtAlmoco.text = "$almoco"
+                    txtJantar.text = "$jantar"
 
                 } else {
                     Toast.makeText(
@@ -66,6 +67,16 @@ class FichasRefeicaoActivity : AppCompatActivity() {
             }.addOnFailureListener { error ->
                 Toast.makeText(baseContext, "Error", Toast.LENGTH_SHORT).show()
             }
+    }
+
+    private fun progressLogin() {
+        val loading = LoadingDialog(this)
+        loading.startLoading()
+        Handler().postDelayed(object : Runnable {
+            override fun run() {
+                loading.isDismiss()
+            }
+        }, 3000)
     }
 }
 

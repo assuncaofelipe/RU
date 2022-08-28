@@ -1,4 +1,4 @@
-package com.assuncao.ru
+package com.assuncao.ru.services
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,8 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.assuncao.ru.MenuActivity
+import com.assuncao.ru.R
 import com.assuncao.ru.fragment.LoadingDialog
 import com.google.firebase.auth.FirebaseAuth
 
