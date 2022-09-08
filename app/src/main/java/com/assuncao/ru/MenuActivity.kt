@@ -2,6 +2,7 @@ package com.assuncao.ru
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -11,10 +12,13 @@ import com.assuncao.ru.ui.DeclaracaoQRcode
 import com.assuncao.ru.ui.DiasCardapioActivity
 import com.assuncao.ru.ui.SobreActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MenuActivity : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
+    private val sb: StringBuilder = StringBuilder()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,15 +28,24 @@ class MenuActivity : AppCompatActivity() {
 
         // saindo do apk0
         val btnLogout = findViewById<Button>(R.id.btn_sair)
-        btnLogout.setOnClickListener {
-            logout()
+        val user = Firebase.auth.currentUser
+        if (user != null) {
+            btnLogout.setOnClickListener {
+                mAuth?.signOut();
+                onDestroy();
+            }
         }
     }
 
-    private fun logout() {
-        mAuth?.signOut()
-        startActivity(Intent(this, LoginActivity::class.java))
+    override fun onDestroy() {
+        super.onDestroy()
+        sb.append("\n onDestroy Called")
+        Log.d("ACTIVITY_LIFECYCLE", "onDestroy Called")
         finish()
+    }
+
+    private fun logout() {
+
     }
 
     private fun navigateActivitiesMenu() {

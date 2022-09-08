@@ -39,9 +39,9 @@ class FichasRefeicaoActivity : AppCompatActivity() {
     // é um ouvinte do documento que pertence a colecao
     private fun headerStudent() {
         progressLogin()
-        val logado = FirebaseAuth.getInstance().getCurrentUser()!!.getUid()
+        val userLogado = FirebaseAuth.getInstance().getCurrentUser()!!.getUid()
         db.collection("Alunos")
-            .document(logado)
+            .document(userLogado)
             .get()
             .addOnSuccessListener { documento ->
                 if (documento != null && documento.exists()) {
