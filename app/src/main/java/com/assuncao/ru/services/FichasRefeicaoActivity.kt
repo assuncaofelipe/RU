@@ -2,6 +2,7 @@ package com.assuncao.ru.services
 
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -15,9 +16,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 class FichasRefeicaoActivity : AppCompatActivity() {
 
     private lateinit var db: FirebaseFirestore
-
-    // refresh layout
-    private lateinit var swipeRefresh: SwipeRefreshLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +37,8 @@ class FichasRefeicaoActivity : AppCompatActivity() {
     // é um ouvinte do documento que pertence a colecao
     private fun headerStudent() {
         progressLogin()
-        val userLogado = FirebaseAuth.getInstance().getCurrentUser()!!.getUid()
+        //val userLogado = FirebaseAuth.getInstance().getCurrentUser()!!.getUid()
+        val userLogado = FirebaseAuth.getInstance().getUid()!!
         db.collection("Alunos")
             .document(userLogado)
             .get()
@@ -74,8 +73,8 @@ class FichasRefeicaoActivity : AppCompatActivity() {
     private fun progressLogin() {
         val loading = LoadingDialog(this)
         loading.startLoading()
-        Handler().postDelayed(object : Runnable {
-            override fun run() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            run {
                 loading.isDismiss()
             }
         }, 3000)

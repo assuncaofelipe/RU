@@ -3,6 +3,7 @@ package com.assuncao.ru.services
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.text.TextUtils
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -77,14 +78,22 @@ class LoginActivity : AppCompatActivity() {
     private fun progressLogin() {
         val loading = LoadingDialog(this)
         loading.startLoading()
-        Handler().postDelayed(object : Runnable {
-            override fun run() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            run {
                 loading.isDismiss()
             }
-        }, 1500)
+        }, 2000)
     }
 
     private fun preencheCampos() {
         Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val usuarioAtual = FirebaseAuth.getInstance().currentUser
+        if (usuarioAtual != null) {
+            abrirTelaMenu()
+        }
     }
 }

@@ -2,6 +2,7 @@ package com.assuncao.ru.cardapios
 
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -60,8 +61,8 @@ class TercaFeiraActivity : AppCompatActivity() {
     private fun progressLogin() {
         val loading = LoadingDialog(this)
         loading.startLoading()
-        Handler().postDelayed(object : Runnable {
-            override fun run() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            run {
                 loading.isDismiss()
             }
         }, 3000)

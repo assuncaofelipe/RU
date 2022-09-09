@@ -2,7 +2,6 @@ package com.assuncao.ru
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -25,27 +24,17 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         navigateActivitiesMenu()
+        deslogar()
+    }
 
-        // saindo do apk0
+    private fun deslogar(){
         val btnLogout = findViewById<Button>(R.id.btn_sair)
-        val user = Firebase.auth.currentUser
-        if (user != null) {
-            btnLogout.setOnClickListener {
-                mAuth?.signOut();
-                onDestroy();
-            }
+        btnLogout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val voltarTelaLogin = Intent(this, LoginActivity::class.java)
+            startActivity(voltarTelaLogin)
+            finish()
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        sb.append("\n onDestroy Called")
-        Log.d("ACTIVITY_LIFECYCLE", "onDestroy Called")
-        finish()
-    }
-
-    private fun logout() {
-
     }
 
     private fun navigateActivitiesMenu() {
@@ -74,4 +63,5 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
 }

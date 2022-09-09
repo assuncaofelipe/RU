@@ -3,6 +3,7 @@ package com.assuncao.ru.cardapios
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.widget.TextView
 import android.widget.Toast
 import com.assuncao.ru.R
@@ -61,8 +62,8 @@ class SabadoActivity : AppCompatActivity() {
     private fun progressLogin() {
         val loading = LoadingDialog(this)
         loading.startLoading()
-        Handler().postDelayed(object : Runnable {
-            override fun run() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            run {
                 loading.isDismiss()
             }
         }, 3000)

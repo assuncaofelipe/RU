@@ -1,16 +1,26 @@
 package com.assuncao.ru.ui
 
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.util.Log
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.assuncao.ru.R
 import com.assuncao.ru.databinding.ActivityDeclaracaoQrcodeBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.WriterException
+import com.journeyapps.barcodescanner.BarcodeEncoder
 
 
 class DeclaracaoQRcode : AppCompatActivity() {
 
     private lateinit var binding: ActivityDeclaracaoQrcodeBinding
     private lateinit var user: FirebaseAuth
+
+    private lateinit var imageView: ImageView
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,12 +31,59 @@ class DeclaracaoQRcode : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.arrow_back)
 
-        user = FirebaseAuth.getInstance()
+        // Aciona a instancia do Firebase pelo db
+        db = FirebaseFirestore.getInstance()
 
+        seeCurrentUser()
+        mainQRcode()
+
+    }
+
+    private fun seeCurrentUser() {
+        user = FirebaseAuth.getInstance()
         if (user.currentUser != null) {
             user.currentUser?.let {
                 binding.txtResultEmail.text = it.email
             }
         }
+    }
+
+
+    private fun mainQRcode() {
+
+        imageView = findViewById(R.id.img_qr_code)
+
+        val userLogado = FirebaseAuth.getInstance().currentUser!!.uid
+        db.collection("Alunos")
+            .document(userLogado)
+            .get()
+            .addOnSuccessListener { documento ->
+                if (documento != null && documento.exists()) {
+                    val data = documento.data
+                    val email = data?.get("email")
+                    val nome = data?.get("nome")
+                    val matricula = data?.get("matricula")
+
+                    val screenWidth = resources.displayMetrics.widthPixels
+                    val qrImage = generateQR(email as String?, screenWidth)
+                    if (null != qrImage) {
+                        imageView.setImageBitmap(qrImage)
+                    }
+                }
+            }
+    }
+
+    private fun generateQR(content: String?, size: Int): Bitmap? {
+        var bitmap: Bitmap? = null
+        try {
+            val barcodeEncoder = BarcodeEncoder()
+            bitmap = barcodeEncoder.encodeBitmap(
+                content,
+                BarcodeFormat.QR_CODE, size, size,
+            )
+        } catch (e: WriterException) {
+            Log.e("generateQR()", "qr gerado")
+        }
+        return bitmap
     }
 }
