@@ -34,9 +34,9 @@ class DeclaracaoQRcode : AppCompatActivity() {
         // Aciona a instancia do Firebase pelo db
         db = FirebaseFirestore.getInstance()
 
+        // chamando funções
         seeCurrentUser()
         mainQRcode()
-
     }
 
     private fun seeCurrentUser() {
@@ -48,11 +48,8 @@ class DeclaracaoQRcode : AppCompatActivity() {
         }
     }
 
-
     private fun mainQRcode() {
-
         imageView = findViewById(R.id.img_qr_code)
-
         val userLogado = FirebaseAuth.getInstance().currentUser!!.uid
         db.collection("Alunos")
             .document(userLogado)
@@ -61,8 +58,6 @@ class DeclaracaoQRcode : AppCompatActivity() {
                 if (documento != null && documento.exists()) {
                     val data = documento.data
                     val email = data?.get("email")
-                    val nome = data?.get("nome")
-                    val matricula = data?.get("matricula")
 
                     val screenWidth = resources.displayMetrics.widthPixels
                     val qrImage = generateQR(email as String?, screenWidth)

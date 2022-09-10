@@ -28,9 +28,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         mAuth = FirebaseAuth.getInstance()
-
         loginApp()
-
     }
 
     private fun loginApp() {
@@ -44,7 +42,12 @@ class LoginActivity : AppCompatActivity() {
             val loginSenha = editSenha.text.toString()
 
             if (!TextUtils.isEmpty(loginEmail) && !TextUtils.isEmpty(loginSenha)) {
-                progressLogin()
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Carregando, aguarde...",
+                    Toast.LENGTH_SHORT
+                ).show()
+                //progressLogin()
                 mAuth!!.signInWithEmailAndPassword(loginEmail, loginSenha)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
@@ -53,7 +56,6 @@ class LoginActivity : AppCompatActivity() {
                             val error = task.exception!!.message
                             Toast.makeText(this@LoginActivity, "" + error, Toast.LENGTH_SHORT)
                                 .show()
-                            // loginProgressBar.setVisibility(View.INVISIBLE);
                         }
                     }
             } else if (TextUtils.isEmpty(loginEmail) || (TextUtils.isEmpty(loginSenha))) {
