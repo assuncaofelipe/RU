@@ -35,17 +35,26 @@ class SabadoActivity : AppCompatActivity() {
                 if (documento != null && documento.exists()) {
                     val data = documento.data
 
-                    val desjejum = data?.get("desjejum")
-                    val almoco = data?.get("almoco")
-                    val jantar = data?.get("jantar")
+                    val desjejumBebida = data?.get("desjejum_bebida")
+                    val desjejumCom = data?.get("desjejum_complemento")
+                    val almocoPro = data?.get("almoco_proteina")
+                    val almocoCom = data?.get("almoco_complemento")
+                    val jantarPro = data?.get("jantar_proteina")
+                    val jantarCom = data?.get("jantar_complemento")
 
-                    val desjejumSegunda = findViewById<TextView>(R.id.refeicao_desjejum_sabado)
-                    val almocoSegunda = findViewById<TextView>(R.id.refeicao_almoco_sabado)
-                    val jantaSegunda = findViewById<TextView>(R.id.refeicao_jantar_sabado)
+                    val desjejumSabadoBebida = findViewById<TextView>(R.id.refeicao_desjejum_sabado_bebida)
+                    val desjejumSabadoCom = findViewById<TextView>(R.id.refeicao_desjejum_sabado_complemento)
+                    val almocoSabadoPro = findViewById<TextView>(R.id.refeicao_almoco_sabado_proteina)
+                    val almocoSabadoCom = findViewById<TextView>(R.id.refeicao_almoco_sabado_complemento)
+                    val jantaSabadoPro = findViewById<TextView>(R.id.refeicao_jantar_sabado_proteina)
+                    val jantaSabadoCom = findViewById<TextView>(R.id.refeicao_jantar_sabado_complemento)
 
-                    desjejumSegunda.text = "$desjejum"
-                    almocoSegunda.text = "$almoco"
-                    jantaSegunda.text = "$jantar"
+                    desjejumSabadoBebida.text = "$desjejumBebida"
+                    desjejumSabadoCom.text = "$desjejumCom"
+                    almocoSabadoPro.text = "$almocoPro"
+                    almocoSabadoCom.text = "$almocoCom"
+                    jantaSabadoPro.text = "$jantarPro"
+                    jantaSabadoCom.text = "$jantarCom"
                 } else {
                     Toast.makeText(
                         baseContext,

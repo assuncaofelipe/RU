@@ -54,19 +54,32 @@
                     app:layout_constraintTop_toBottomOf="@+id/img_desjejum_sabado" />
 
                 <TextView
-                    android:id="@+id/refeicao_desjejum_sabado"
+                    android:id="@+id/refeicao_desjejum_sabado_bebida"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:textSize="20sp"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="24dp"
-                    android:text="Sem informações"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text=""
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/titulo_desjejum_sabado" />
+
+                <TextView
+                    android:id="@+id/refeicao_desjejum_sabado_complemento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:text=""
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/refeicao_desjejum_sabado_bebida" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -113,7 +126,20 @@
                     app:layout_constraintTop_toBottomOf="@+id/img_almoco_sabado" />
 
                 <TextView
-                    android:id="@+id/refeicao_almoco_sabado"
+                    android:id="@+id/refeicao_almoco_sabado_proteina"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text=""
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titulo_almoco_sabado" />
+
+                <TextView
+                    android:id="@+id/refeicao_almoco_sabado_complemento"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -121,11 +147,11 @@
                     android:textSize="20sp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="24dp"
-                    android:text="sem informações"
+                    android:text=""
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titulo_almoco_sabado" />
+                    app:layout_constraintTop_toBottomOf="@+id/refeicao_almoco_sabado_proteina" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -173,7 +199,20 @@
                     app:layout_constraintTop_toBottomOf="@+id/img_jantar_sabado" />
 
                 <TextView
-                    android:id="@+id/refeicao_jantar_sabado"
+                    android:id="@+id/refeicao_jantar_sabado_proteina"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text=""
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titulo_jantar_sabado" />
+
+                <TextView
+                    android:id="@+id/refeicao_jantar_sabado_complemento"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -181,11 +220,11 @@
                     android:textSize="20sp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="24dp"
-                    android:text="sem informações"
+                    android:text=""
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titulo_jantar_sabado" />
+                    app:layout_constraintTop_toBottomOf="@+id/refeicao_jantar_sabado_proteina" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

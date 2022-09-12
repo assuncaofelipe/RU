@@ -34,17 +34,26 @@ class TercaFeiraActivity : AppCompatActivity() {
                 if (documento != null && documento.exists()) {
                     val data = documento.data
 
-                    val desjejum = data?.get("desjejum")
-                    val almoco = data?.get("almoco")
-                    val jantar = data?.get("jantar")
+                    val desjejumBebida = data?.get("desjejum_bebida")
+                    val desjejumComplemento = data?.get("desjejum_complemento")
+                    val almocoProteina = data?.get("almoco_proteina")
+                    val almocoCompleto = data?.get("almoco_complemento")
+                    val jantarProteina = data?.get("jantar_proteina")
+                    val jantarComplemento = data?.get("jantar_complemento")
 
-                    val desjejumSegunda = findViewById<TextView>(R.id.refeicao_desjejum_terc)
-                    val almocoSegunda = findViewById<TextView>(R.id.refeicao_almoco_terc)
-                    val jantaSegunda = findViewById<TextView>(R.id.refeicao_jantar_terc)
+                    val desjejumTercBebida = findViewById<TextView>(R.id.refeicao_desjejum_terc_bebida)
+                    val desjejumTercComplemento = findViewById<TextView>(R.id.refeicao_desjejum_terc_complemento)
+                    val almocoTercProteina = findViewById<TextView>(R.id.refeicao_almoco_terc_proteina)
+                    val almocoTercComplemento = findViewById<TextView>(R.id.refeicao_almoco_terc_complemento)
+                    val jantaTercProteina = findViewById<TextView>(R.id.refeicao_jantar_terc_proteina)
+                    val jantaTercComplemento = findViewById<TextView>(R.id.refeicao_jantar_terc_complemento)
 
-                    desjejumSegunda.text = "$desjejum"
-                    almocoSegunda.text = "$almoco"
-                    jantaSegunda.text = "$jantar"
+                    desjejumTercBebida.text = "$desjejumBebida"
+                    desjejumTercComplemento.text = "$desjejumComplemento"
+                    almocoTercProteina.text = "$almocoProteina"
+                    almocoTercComplemento.text = "$almocoCompleto"
+                    jantaTercProteina.text = "$jantarProteina"
+                    jantaTercComplemento.text = "$jantarComplemento"
                 } else {
                     Toast.makeText(
                         baseContext,

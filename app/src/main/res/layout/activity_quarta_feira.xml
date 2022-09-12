@@ -54,19 +54,32 @@
                     app:layout_constraintTop_toBottomOf="@+id/img_desjejum_quarta" />
 
                 <TextView
-                    android:id="@+id/refeicao_desjejum_quarta"
+                    android:id="@+id/refeicao_desjejum_quarta_bebida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text=""
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titulo_desjejum_quarta" />
+
+                <TextView
+                    android:id="@+id/refeicao_desjejum_quarta_complemento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="24dp"
-                    android:text="sem informações"
+                    android:text=""
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titulo_desjejum_quarta" />
+                    app:layout_constraintTop_toBottomOf="@+id/refeicao_desjejum_quarta_bebida" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -113,19 +126,32 @@
                     app:layout_constraintTop_toBottomOf="@+id/img_almoco_quarta" />
 
                 <TextView
-                    android:id="@+id/refeicao_almoco_quarta"
+                    android:id="@+id/refeicao_almoco_quarta_proteina"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text=""
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titulo_almoco_quarta" />
+
+                <TextView
+                    android:id="@+id/refeicao_almoco_quarta_complemento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="24dp"
-                    android:text="sem informações"
+                    android:text=""
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titulo_almoco_quarta" />
+                    app:layout_constraintTop_toBottomOf="@+id/refeicao_almoco_quarta_proteina" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -175,19 +201,32 @@
                     app:layout_constraintTop_toBottomOf="@+id/img_jantar_quarta" />
 
                 <TextView
-                    android:id="@+id/refeicao_jantar_quarta"
+                    android:id="@+id/refeicao_jantar_quarta_proteina"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text=""
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titulo_jantar_quarta" />
+
+                <TextView
+                    android:id="@+id/refeicao_jantar_quarta_complemento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="24dp"
-                    android:text="sem informações"
+                    android:text=""
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titulo_jantar_quarta" />
+                    app:layout_constraintTop_toBottomOf="@+id/refeicao_jantar_quarta_proteina" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

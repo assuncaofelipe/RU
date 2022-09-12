@@ -54,19 +54,32 @@
                     app:layout_constraintTop_toBottomOf="@+id/img_desjejum_quinta" />
 
                 <TextView
-                    android:id="@+id/refeicao_desjejum_quinta"
+                    android:id="@+id/refeicao_desjejum_quinta_bebida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text=""
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titulo_desjejum_quinta" />
+
+                <TextView
+                    android:id="@+id/refeicao_desjejum_quinta_complemento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="24dp"
-                    android:text="sem informações"
+                    android:text=""
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titulo_desjejum_quinta" />
+                    app:layout_constraintTop_toBottomOf="@+id/refeicao_desjejum_quinta_bebida" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -113,19 +126,32 @@
                     app:layout_constraintTop_toBottomOf="@+id/img_almoco_quinta" />
 
                 <TextView
-                    android:id="@+id/refeicao_almoco_quinta"
+                    android:id="@+id/refeicao_almoco_quinta_proteina"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text=""
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titulo_almoco_quinta" />
+
+                <TextView
+                    android:id="@+id/refeicao_almoco_quinta_complemento"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="24dp"
-                    android:text="sem informações"
+                    android:text=""
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titulo_almoco_quinta" />
+                    app:layout_constraintTop_toBottomOf="@+id/refeicao_almoco_quinta_proteina" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -174,19 +200,32 @@
                     app:layout_constraintTop_toBottomOf="@+id/img_jantar_quinta" />
 
                 <TextView
-                    android:id="@+id/refeicao_jantar_quinta"
+                    android:id="@+id/refeicao_jantar_quinta_proteina"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text=""
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titulo_jantar_quinta" />
+
+                <TextView
+                    android:id="@+id/refeicao_jantar_quinta_complemento"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="24dp"
-                    android:text="sem informações"
+                    android:text=""
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titulo_jantar_quinta" />
+                    app:layout_constraintTop_toBottomOf="@+id/refeicao_jantar_quinta_proteina" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

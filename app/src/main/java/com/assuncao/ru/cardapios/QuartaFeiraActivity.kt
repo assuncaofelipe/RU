@@ -6,7 +6,6 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.os.postDelayed
 import com.assuncao.ru.R
 import com.assuncao.ru.fragment.LoadingDialog
 import com.google.firebase.firestore.FirebaseFirestore
@@ -35,17 +34,30 @@ class QuartaFeiraActivity : AppCompatActivity() {
                 if (documento != null && documento.exists()) {
                     val data = documento.data
 
-                    val desjejum = data?.get("desjejum")
-                    val almoco = data?.get("almoco")
-                    val jantar = data?.get("jantar")
+                    val desjejumBebida = data?.get("desjejum_bebida")
+                    val desjejumComplemento = data?.get("desjejum_complemento")
+                    val almocoProteina = data?.get("almoco_proteina")
+                    val almocoComplemento = data?.get("almoco_complemento")
+                    val jantarProteina = data?.get("jantar_proteina")
+                    val jantarComplemento = data?.get("jantar_complemento")
 
-                    val desjejumSegunda = findViewById<TextView>(R.id.refeicao_desjejum_quarta)
-                    val almocoSegunda = findViewById<TextView>(R.id.refeicao_almoco_quarta)
-                    val jantaSegunda = findViewById<TextView>(R.id.refeicao_jantar_quarta)
+                    val desjejumQuartaBebida = findViewById<TextView>(R.id.refeicao_desjejum_quarta_bebida)
+                    val desjejumQuartaComplemento = findViewById<TextView>(R.id.refeicao_desjejum_quarta_complemento)
 
-                    desjejumSegunda.text = "$desjejum"
-                    almocoSegunda.text = "$almoco"
-                    jantaSegunda.text = "$jantar"
+                    val almocoQuartaPro = findViewById<TextView>(R.id.refeicao_almoco_quarta_proteina)
+                    val almocoQuartaCom = findViewById<TextView>(R.id.refeicao_almoco_quarta_complemento)
+
+                    val jantaQuartaPro = findViewById<TextView>(R.id.refeicao_jantar_quarta_proteina)
+                    val jantaQuartaCom = findViewById<TextView>(R.id.refeicao_jantar_quarta_complemento)
+
+                    desjejumQuartaBebida.text = "$desjejumBebida"
+                    desjejumQuartaComplemento.text = "$desjejumComplemento"
+
+                    almocoQuartaPro.text = "$almocoProteina"
+                    almocoQuartaCom.text = "$almocoComplemento"
+
+                    jantaQuartaPro.text = "$jantarProteina"
+                    jantaQuartaCom.text = "$jantarComplemento"
                 } else {
                     Toast.makeText(
                         baseContext,
