@@ -46,5 +46,5 @@
         labore et dolore magna aliqua.
     </string>
     <string name="sobre_icet">O Instituto de Ciências Extas e Tecnologia (ICET/UFAM) localiza-se a 280km de Manaus e começou a dar seus primeiros passos no ano de 1991, com a instalação do Campus Avançado de Itacoatiara. Atualmente, o ICET oferece os cursos: Agronomia, Engenharia de Software, Engenharia de Produção, Engenharia Sanitária, Farmácia, Pedagogia, Química Industrial, Sistema de Informação, Ciências: Química e Biologia.</string>
-
+    <string name="sobre_disciplina">O objetivo da disciplina de Desenvolvimento para Dispositivos Móveis é transmitir os princípios básicos e boas práticas de desenvolvimento de software para dispositivos móveis. Familiarizar o aluno com o sistema operacional e framework Android e adquirir experiência prática com a programação para essa plataforma</string>
 </resources>
