@@ -3,75 +3,65 @@ package com.assuncao.ru
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+import com.assuncao.ru.services.FichasRefeicaoActivity
+import com.assuncao.ru.services.LoginActivity
+import com.assuncao.ru.ui.DeclaracaoQRcode
+import com.assuncao.ru.ui.DiasCardapioActivity
+import com.assuncao.ru.ui.SobreActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MenuActivity : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
-    private val mAuthStateListener: FirebaseAuth.AuthStateListener? = null
+    private val sb: StringBuilder = StringBuilder()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        clickListener()
+        navigateActivitiesMenu()
+        deslogar()
+    }
 
-        // saindo do apk0
+    private fun deslogar(){
         val btnLogout = findViewById<Button>(R.id.btn_sair)
         btnLogout.setOnClickListener {
-            logout()
+            FirebaseAuth.getInstance().signOut()
+            val voltarTelaLogin = Intent(this, LoginActivity::class.java)
+            startActivity(voltarTelaLogin)
+            finish()
         }
     }
 
-    private fun logout() {
-        mAuth?.signOut()
-        startActivity(Intent(this, LoginActivity::class.java))
-        finish()
-    }
-
-    private fun clickListener() {
-        val btnFichas = findViewById<LinearLayout>(R.id.btnFichas)
-        val btnDeclaracao = findViewById<LinearLayout>(R.id.btnDeclaracao)
-        val btnCardapio = findViewById<LinearLayout>(R.id.btnCardapio)
-        val btnSobre = findViewById<LinearLayout>(R.id.btnSobre)
+    private fun navigateActivitiesMenu() {
+        val btnFichas = findViewById<CardView>(R.id.crdFichas)
+        val btnCardapio = findViewById<CardView>(R.id.crdCardapio)
+        val btnDeclaracao = findViewById<CardView>(R.id.crdDeclaracao)
+        val btnSobre = findViewById<CardView>(R.id.crdSobre)
 
         btnFichas.setOnClickListener {
-            openFichasActivity()
+            val intent = Intent(this, FichasRefeicaoActivity::class.java)
+            startActivity(intent)
         }
 
-        btnDeclaracao.setOnClickListener{
-            openTelaDeclaracao()
+        btnCardapio.setOnClickListener {
+            val intent = Intent(this, DiasCardapioActivity::class.java)
+            startActivity(intent)
         }
 
-        btnCardapio.setOnClickListener{
-            openCardapioActivity()
+        btnDeclaracao.setOnClickListener {
+            val intent = Intent(this, DeclaracaoQRcode::class.java)
+            startActivity(intent)
         }
 
-        btnSobre.setOnClickListener{
-            openSobre()
+        btnSobre.setOnClickListener {
+            val intent = Intent(this, SobreActivity::class.java)
+            startActivity(intent)
         }
-
     }
 
-    private fun openFichasActivity() {
-        val intent = Intent(this, FichasRefeicaoActivity::class.java)
-        startActivity(intent)
-    }
-
-    fun openCardapioActivity() {
-        val intent = Intent(this, CardapioActivity::class.java)
-        startActivity(intent)
-    }
-
-    private fun openTelaDeclaracao() {
-        val intent = Intent(this, DeclaracaoQRcode::class.java)
-        startActivity(intent)
-    }
-
-    fun openSobre() {
-        val intent = Intent(this, SobreActivity::class.java)
-        startActivity(intent)
-    }
 }

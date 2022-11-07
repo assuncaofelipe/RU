@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:fillViewport="true"
-    tools:context=".CardapioActivity">
+    android:orientation="vertical"
+    tools:context=".ui.DiasCardapioActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -31,20 +30,20 @@
                 android:padding="16dp">
 
                 <ImageView
-                    android:id="@+id/img_segunda_feira"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_desjejum"
+                    android:id="@+id/img_desjejum"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/itacoatiara"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="ContentDescription" />
 
                 <TextView
-                    android:id="@+id/titulo_segunda_feira"
+                    android:id="@+id/titulo_desjejum_seg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -52,7 +51,7 @@
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/img_segunda_feira"
+                    app:layout_constraintStart_toEndOf="@+id/img_desjejum"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <!--     <TextView
@@ -93,12 +92,12 @@
 
                 <ImageView
                     android:id="@+id/img_terca"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_desjejum"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/manaus"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -150,12 +149,12 @@
 
                 <ImageView
                     android:id="@+id/img_quarta"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_desjejum"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/parintins"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -207,12 +206,12 @@
 
                 <ImageView
                     android:id="@+id/img_quinta"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_desjejum"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/coari"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -229,18 +228,18 @@
                     app:layout_constraintStart_toEndOf="@+id/img_quinta"
                     app:layout_constraintTop_toTopOf="parent" />
 
-               <!-- <TextView
-                    android:id="@+id/txt_quinta_complemento"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="24dp"
-                    android:text="Quantidade"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/img_quinta"
-                    app:layout_constraintTop_toBottomOf="@+id/quinta_feira" /> -->
+                <!-- <TextView
+                     android:id="@+id/txt_quinta_complemento"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginTop="16dp"
+                     android:layout_marginBottom="24dp"
+                     android:text="Quantidade"
+                     android:textSize="16sp"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintStart_toEndOf="@+id/img_quinta"
+                     app:layout_constraintTop_toBottomOf="@+id/quinta_feira" /> -->
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
@@ -264,12 +263,12 @@
 
                 <ImageView
                     android:id="@+id/img_sexta"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_desjejum"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/benjamin_constant"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -286,29 +285,31 @@
                     app:layout_constraintStart_toEndOf="@+id/img_sexta"
                     app:layout_constraintTop_toTopOf="parent" />
 
-            <!--    <TextView
-                    android:id="@+id/txt_sexta_complemento"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="24dp"
-                    android:text="Quantidade"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/img_sexta"
-                    app:layout_constraintTop_toBottomOf="@+id/sexta_feira" /> -->
+                <!--    <TextView
+                        android:id="@+id/txt_sexta_complemento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="24dp"
+                        android:text="Quantidade"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/img_sexta"
+                        app:layout_constraintTop_toBottomOf="@+id/sexta_feira" /> -->
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_sabado_feira"
+            android:id="@+id/card_sabado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:paddingBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_sexta_feira"
@@ -322,12 +323,12 @@
 
                 <ImageView
                     android:id="@+id/img_sabado"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_desjejum"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/humaita"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -344,7 +345,7 @@
                     app:layout_constraintStart_toEndOf="@+id/img_sabado"
                     app:layout_constraintTop_toTopOf="parent" />
 
-            <!--    <TextView
+                <!--    <TextView
                     android:id="@+id/txt_sabado_complemento"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

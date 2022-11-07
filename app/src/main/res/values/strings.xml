@@ -16,13 +16,16 @@
     <string name="txt_tela_fichas">Minhas Fichas</string>
     <string name="txt_tela_declaracao">Declaração</string>
     <string name="txt_tela_cardapio">Cardápio</string>
+    <string name="txt_tela_dias_semana">Cardápio da semana</string>
     <string name="txt_tela_sobre">Sobre</string>
 
-    <!-- STRING TELA LATERAL -->
-    <string name="menu_home">Início</string>
-    <string name="menu_cardapio">Cardápio</string>
-    <string name="menu_declaracao_ru">Declaração RU</string>
-    <string name="menu_sobre">Sobre</string>
+    <!-- STRING Toolbar -->
+    <string name="toolbar_segunda">Segunda-Feira</string>
+    <string name="toolbar_terca">Terça-Feira</string>
+    <string name="toolbar_quarta">Quarta-Feira</string>
+    <string name="toolbar_quinta">Quinta-Feira</string>
+    <string name="toolbar_sexta">Sexta-Feira</string>
+    <string name="toolbar_sabado">Sábado</string>
 
     <!-- STRING TELA LOGIN -->
     <string name="mostrar_senha">Mostrar Senha</string>
@@ -42,5 +45,6 @@
     <string name="texto_alerta_fichas"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua.
     </string>
-
+    <string name="sobre_icet">O Instituto de Ciências Extas e Tecnologia (ICET/UFAM) localiza-se a 280km de Manaus e começou a dar seus primeiros passos no ano de 1991, com a instalação do Campus Avançado de Itacoatiara. Atualmente, o ICET oferece os cursos: Agronomia, Engenharia de Software, Engenharia de Produção, Engenharia Sanitária, Farmácia, Pedagogia, Química Industrial, Sistema de Informação, Ciências: Química e Biologia.</string>
+    <string name="sobre_disciplina">O objetivo da disciplina de Desenvolvimento para Dispositivos Móveis é transmitir os princípios básicos e boas práticas de desenvolvimento de software para dispositivos móveis. Familiarizar o aluno com o sistema operacional e framework Android e adquirir experiência prática com a programação para essa plataforma</string>
 </resources>

@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:fillViewport="true"
+    android:orientation="vertical"
     tools:context=".MenuActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- Toolbar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -44,158 +45,228 @@
                 tools:layout_editor_absoluteY="13dp" />
         </androidx.appcompat.widget.Toolbar>
 
-
-        <androidx.gridlayout.widget.GridLayout
-            android:id="@+id/gridLayout"
+        <!-- Card Minhas Fichas -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/crdFichas"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            app:alignmentMode="alignMargins"
-            app:columnCount="2"
-            app:columnOrderPreserved="false"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            tools:layout_editor_absoluteX="20dp">
+            tools:ignore="MissingConstraints">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/crdFichas"
-                android:layout_width="50dp"
-                android:layout_height="150dp"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                app:layout_columnWeight="1"
-                app:layout_rowWeight="1">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="50dp"
+                android:padding="16dp">
 
-                <LinearLayout
-                    android:id="@+id/btnFichas"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                <ImageView
+                    android:id="@+id/ivFichas"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/ic_ficha_money"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
-                    <ImageView
-                        android:id="@+id/ivFichas"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/ic_ficha_money"
-                        tools:ignore="SpeakableTextPresentCheck" />
+                <TextView
+                    android:id="@+id/txtFichas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Minhas Fichas"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivFichas"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
-                    <TextView
+        <!-- Card Cardápio -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/crdCardapio"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/crdFichas"
+            tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="50dp"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/ivCardapio"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/ic_talher"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/txtCardapio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Cardápio"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivCardapio"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--     <TextView
+                        android:id="@+id/alimentos_terca_feira"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:gravity="center"
-                        android:text="Minhas Fichas"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="24dp"
+                        android:text="complemento"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/img_segunda_feira"
+                        app:layout_constraintTop_toBottomOf="@+id/titulo_segunda_feira"
+                        app:layout_constraintVertical_bias="0.0" /> -->
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/crdCardapio"
-                android:layout_width="50dp"
-                android:layout_height="150dp"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                app:layout_columnWeight="1"
-                app:layout_rowWeight="1">
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <LinearLayout
-                    android:id="@+id/btnCardapio"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+        </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:id="@+id/ivCardapio"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/ic_talher"
-                        tools:ignore="SpeakableTextPresentCheck" />
+        <!-- Card Declaração -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/crdDeclaracao"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/crdCardapio"
+            tools:ignore="MissingConstraints">
 
-                    <TextView
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="50dp"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/ivDeclaracao"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/ic_school_focused"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/txtDeclaracao"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Declaração RU"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivDeclaracao"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--     <TextView
+                        android:id="@+id/alimentos_terca_feira"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:gravity="center"
-                        android:text="Cardápio"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="24dp"
+                        android:text="complemento"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/img_segunda_feira"
+                        app:layout_constraintTop_toBottomOf="@+id/titulo_segunda_feira"
+                        app:layout_constraintVertical_bias="0.0" /> -->
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="50dp"
-                android:layout_height="150dp"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                app:layout_columnWeight="1"
-                app:layout_rowWeight="1">
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <LinearLayout
-                    android:id="@+id/btnDeclaracao"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+        </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:id="@+id/ivDeclaracao"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/ic_school_focused" />
+        <!-- Card Sobre -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/crdSobre"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/crdDeclaracao"
+            tools:ignore="MissingConstraints">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:gravity="center"
-                        android:text="Declaração RU"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="50dp"
+                android:padding="16dp">
 
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:id="@+id/ivSobre"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/ic_about"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="50dp"
-                android:layout_height="150dp"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                app:layout_columnWeight="1"
-                app:layout_rowWeight="1">
-
-                <LinearLayout
-                    android:id="@+id/btnSobre"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:id="@+id/ivSobre"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/ic_about" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:gravity="center"
-                        android:text="Sobre"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </androidx.gridlayout.widget.GridLayout>
+                <TextView
+                    android:id="@+id/txtSobre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Sobre"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivSobre"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
